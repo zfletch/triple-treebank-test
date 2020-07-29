@@ -1,11 +1,11 @@
 {
-  "name": "treebank-template",
-  "version": "3.1.1",
+  "name": "triple-treebank-test",
+  "version": "1.0.0",
   "treebank-template": {
     "version": "3.1.1"
   },
   "private": true,
-  "homepage": "https://perseids-publications.github.io/treebank-template/",
+  "homepage": "https://zfletch.github.io/triple-treebank-test/",
   "dependencies": {
     "@primer/octicons-react": "^9.6.0",
     "alpheios-messaging": "git+https://github.com/alpheios-project/alpheios-messaging.git",
