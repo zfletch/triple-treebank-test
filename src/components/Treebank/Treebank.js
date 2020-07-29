@@ -51,7 +51,7 @@ class Treebank extends Component {
   }
 
   render() {
-    const { chunks, match } = this.props;
+    const { chunks, match, elementId } = this.props;
     const linkQuery = this.linkQuery();
     const fullQuery = this.additionalArgs();
 
@@ -64,7 +64,7 @@ class Treebank extends Component {
           linkQuery={linkQuery}
         />
         <div className="__artsa">
-          <div id="treebank_container" className={styles.treebankContainer} />
+          <div id={elementId} className={styles.treebankContainer} />
         </div>
       </>
     );
@@ -77,6 +77,7 @@ Treebank.propTypes = {
   match: publicationMatchType.isRequired,
   location: locationType.isRequired,
   xml: PropTypes.string.isRequired,
+  elementId: PropTypes.string.isRequired,
 };
 
 export default Treebank;

@@ -3,5 +3,6 @@
 }
 
 .treebankWrapper {
-  min-height: 350px;
+  height: 200px;
+  margin-bottom: -20px;
 }

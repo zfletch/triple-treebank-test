@@ -11,7 +11,10 @@ export const chunksType = shape({
 export const sectionType = shape({
   locus: string.isRequired,
   path: string.isRequired,
-  xml: string.isRequired,
+  xml: oneOfType([
+    string,
+    arrayOf(string),
+  ]).isRequired,
   link: string,
   notes: string,
   chunks: chunksType.isRequired,

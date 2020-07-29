@@ -71,6 +71,9 @@ class Publication extends Component {
   constructor(props) {
     super(props);
 
+    const { xml } = props;
+    const xmls = Array.isArray(xml) ? xml : [xml];
+
     this.state = {
       arethusaLoaded: false,
       subDoc: '',
@@ -78,7 +81,9 @@ class Publication extends Component {
 
     this.setSubdoc = this.setSubdoc.bind(this);
 
-    this.arethusa = new ArethusaWrapper();
+    this.arethusas = xmls.map((_xml, index) => (
+      new ArethusaWrapper(`treebank_container_${index}`)
+    ));
   }
 
   componentDidMount() {
@@ -102,7 +107,7 @@ class Publication extends Component {
   }
 
   setSubdoc() {
-    const subDoc = this.arethusa.getSubdoc();
+    const subDoc = this.arethusas[0].getSubdoc();
     this.setState({ subDoc, arethusaLoaded: true });
   }
 
@@ -124,6 +129,7 @@ class Publication extends Component {
     } = this.props;
 
     const { subDoc } = this.state;
+    const xmls = Array.isArray(xml) ? xml : [xml];
 
     return (
       <>
@@ -163,14 +169,23 @@ class Publication extends Component {
               {!!notes && renderMarkdownRow('Notes', notes)}
             </tbody>
           </table>
-          <div className={styles.treebankWrapper}>
-            <Treebank
-              xml={xml}
-              chunks={chunks}
-              location={location}
-              match={match}
-              arethusa={this.arethusa}
-            />
+          <div className="row">
+            {
+              xmls.map((treebankXml, index) => (
+                <div key={treebankXml} className="col">
+                  <div className={styles.treebankWrapper}>
+                    <Treebank
+                      xml={treebankXml}
+                      chunks={chunks}
+                      location={location}
+                      match={match}
+                      elementId={`treebank_container_${index}`}
+                      arethusa={this.arethusas[index]}
+                    />
+                  </div>
+                </div>
+              ))
+            }
           </div>
           <div className="pt-1 pb-4 text-right">
             <a href={`${process.env.PUBLIC_URL}/xml/${xml}`} target="_blank" rel="noopener noreferrer">
@@ -196,7 +211,10 @@ Publication.propTypes = {
   locus: PropTypes.string.isRequired,
   publicationLink: PropTypes.string,
   notes: PropTypes.string,
-  xml: PropTypes.string.isRequired,
+  xml: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]).isRequired,
   chunks: chunksType.isRequired,
   match: publicationMatchType.isRequired,
   location: locationType.isRequired,
