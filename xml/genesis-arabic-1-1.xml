@@ -1,0 +1,44 @@
+<treebank xmlns:saxon='http://saxon.sf.net/' xml:lang='grc' version='1.5' direction='ltr' format='aldt'>
+  <date>2020-07-24 17:23:43 UTC</date>
+  <annotator>
+    <short/>
+    <name/>
+    <address/>
+    <uri>http://github.com/latin-language-toolkit/arethusa</uri>
+  </annotator>
+  <annotator>
+    <short/>
+    <name/>
+    <address/>
+    <uri>https://services.perseids.org/llt/segtok</uri>
+  </annotator>
+  <annotator>
+    <short/>
+    <name/>
+    <address/>
+    <uri>http://github.com/latin-language-toolkit/arethusa</uri>
+  </annotator>
+  <annotator>
+    <short>HaithamArafa</short>
+    <name>Haitham Arafa</name>
+    <address>arafahaitham@gmail.com</address>
+    <uri>http://data.perseus.org/sosol/users/HaithamArafa</uri>
+  </annotator>
+  <annotator>
+    <short>Usama Gad</short>
+    <name>Usama Gad</name>
+    <address>usamaligad@gmail.com</address>
+    <uri>http://data.perseus.org/sosol/users/Usama%20Gad</uri>
+  </annotator>
+  <sentence id='1' document_id='' subdoc='' span=''>
+    <word id='19' form=',' lemma='punc1' postag='u--------' relation='AuxX' head='0'/>
+    <word id='20' form='في' lemma='في' postag='r--------' relation='AuxP' head='22'/>
+    <word id='21' form='البدء' lemma='' postag='' relation='ADV' head='20'/>
+    <word id='22' form='خلق' lemma='' postag='' relation='PRED' head='0'/>
+    <word id='23' form='الله' lemma='' postag='' relation='SBJ' head='22'/>
+    <word id='24' form='السماء' lemma='' postag='' relation='OBJ_CO' head='25'/>
+    <word id='25' form='و' lemma='و' postag='c--------' relation='COORD' head='22'/>
+    <word id='26' form='الأرض' lemma='' postag='' relation='OBJ_CO' head='25'/>
+    <word id='27' form='.' lemma='punc1' postag='u--------' relation='AuxK' head='0'/>
+  </sentence>
+</treebank>

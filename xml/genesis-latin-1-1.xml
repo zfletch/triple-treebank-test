@@ -1,0 +1,42 @@
+<treebank xmlns:saxon='http://saxon.sf.net/' xml:lang='grc' version='1.5' direction='ltr' format='aldt'>
+  <date>2020-07-24 17:23:43 UTC</date>
+  <annotator>
+    <short/>
+    <name/>
+    <address/>
+    <uri>http://github.com/latin-language-toolkit/arethusa</uri>
+  </annotator>
+  <annotator>
+    <short/>
+    <name/>
+    <address/>
+    <uri>https://services.perseids.org/llt/segtok</uri>
+  </annotator>
+  <annotator>
+    <short/>
+    <name/>
+    <address/>
+    <uri>http://github.com/latin-language-toolkit/arethusa</uri>
+  </annotator>
+  <annotator>
+    <short>HaithamArafa</short>
+    <name>Haitham Arafa</name>
+    <address>arafahaitham@gmail.com</address>
+    <uri>http://data.perseus.org/sosol/users/HaithamArafa</uri>
+  </annotator>
+  <annotator>
+    <short>Usama Gad</short>
+    <name>Usama Gad</name>
+    <address>usamaligad@gmail.com</address>
+    <uri>http://data.perseus.org/sosol/users/Usama%20Gad</uri>
+  </annotator>
+  <sentence id='1' document_id='' subdoc='' span=''>
+    <word id='12' form='in' lemma='in' postag='r--------' relation='AuxP' head='14'/>
+    <word id='13' form='principio' lemma='principio' postag='n-s---nd-' relation='ADV' head='12'/>
+    <word id='14' form='creavit' lemma='creavit' postag='v3sria---' relation='PRED' head='0'/>
+    <word id='15' form='Deus' lemma='Deus' postag='n-s---mn-' relation='SBJ' head='14'/>
+    <word id='16' form='caelum' lemma='caelum' postag='n-s---na-' relation='OBJ_CO' head='17'/>
+    <word id='17' form='et' lemma='et' postag='c--------' relation='COORD' head='14'/>
+    <word id='18' form='terram' lemma='terram' postag='n-s---fa-' relation='OBJ_CO' head='17'/>
+  </sentence>
+</treebank>
