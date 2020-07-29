@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/triple-treebank-test/static/css/main.bd98509e.chunk.css",
+    "main.js": "/triple-treebank-test/static/js/main.016b1144.chunk.js",
+    "main.js.map": "/triple-treebank-test/static/js/main.016b1144.chunk.js.map",
+    "runtime-main.js": "/triple-treebank-test/static/js/runtime-main.54de6f2f.js",
+    "runtime-main.js.map": "/triple-treebank-test/static/js/runtime-main.54de6f2f.js.map",
+    "static/css/2.0379961b.chunk.css": "/triple-treebank-test/static/css/2.0379961b.chunk.css",
+    "static/js/2.ef37fcc9.chunk.js": "/triple-treebank-test/static/js/2.ef37fcc9.chunk.js",
+    "static/js/2.ef37fcc9.chunk.js.map": "/triple-treebank-test/static/js/2.ef37fcc9.chunk.js.map",
+    "index.html": "/triple-treebank-test/index.html",
+    "precache-manifest.cca89aa13b55dc453f62070963cbde14.js": "/triple-treebank-test/precache-manifest.cca89aa13b55dc453f62070963cbde14.js",
+    "service-worker.js": "/triple-treebank-test/service-worker.js",
+    "static/css/2.0379961b.chunk.css.map": "/triple-treebank-test/static/css/2.0379961b.chunk.css.map",
+    "static/css/main.bd98509e.chunk.css.map": "/triple-treebank-test/static/css/main.bd98509e.chunk.css.map",
+    "static/js/2.ef37fcc9.chunk.js.LICENSE.txt": "/triple-treebank-test/static/js/2.ef37fcc9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.54de6f2f.js",
+    "static/css/2.0379961b.chunk.css",
+    "static/js/2.ef37fcc9.chunk.js",
+    "static/css/main.bd98509e.chunk.css",
+    "static/js/main.016b1144.chunk.js"
+  ]
+}
