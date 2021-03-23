@@ -1,3 +1,13 @@
 .treebankContainer {
   position: relative;
 }
+
+.text p {
+  margin-bottom: 0.7rem;
+  margin-top: 0.7rem;
+}
+
+.graph {
+  display: flex;
+  min-height: 500px;
+}

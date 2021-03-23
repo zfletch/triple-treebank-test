@@ -80,10 +80,6 @@ class Publication extends Component {
     };
 
     this.setSubdoc = this.setSubdoc.bind(this);
-
-    this.arethusas = xmls.map((_xml, index) => (
-      new ArethusaWrapper(`treebank_container_${index}`)
-    ));
   }
 
   componentDidMount() {
@@ -107,8 +103,6 @@ class Publication extends Component {
   }
 
   setSubdoc() {
-    const subDoc = this.arethusas[0].getSubdoc();
-    this.setState({ subDoc, arethusaLoaded: true });
   }
 
   render() {
@@ -180,7 +174,8 @@ class Publication extends Component {
                       location={location}
                       match={match}
                       elementId={`treebank_container_${index}`}
-                      arethusa={this.arethusas[index]}
+                      treebankReact={true}
+                      setSubdoc={() => {}}
                     />
                   </div>
                 </div>

@@ -1,7 +1,6 @@
 import { defaultConfig, sidepanelConfig } from './ArethusaConfig';
 
-import './custom.css';
-
+const elementId = 'treebank_container';
 const remoteUrl = `${process.env.PUBLIC_URL}/arethusa`;
 
 const removeToastContainer = ($) => {
@@ -24,8 +23,7 @@ const wordsDiffer = (a, b) => {
 };
 
 class ArethusaWrapper {
-  constructor(elementId) {
-    this.elementId = elementId;
+  constructor() {
     this.render = this.render.bind(this);
   }
 
@@ -42,7 +40,7 @@ class ArethusaWrapper {
       this.widget = new Arethusa();
 
       this.widget
-        .on(this.elementId)
+        .on(elementId)
         .from(remoteUrl)
         .with(getConfig(config))
         .start({ doc, chunk, w });

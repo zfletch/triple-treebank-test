@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Octicon, { Settings } from '@primer/octicons-react';
+import { SettingsIcon } from '@primer/octicons-react';
 import queryString from 'query-string';
 
 import { chunksType, publicationMatchType, queryType } from '../../lib/types';
@@ -37,6 +37,8 @@ class ControlPanel extends Component {
     this.toggleRefOpen = this.toggleRefOpen.bind(this);
     this.toggleSettingsOpen = this.toggleSettingsOpen.bind(this);
     this.renderSettingsLinks = this.renderSettingsLinks.bind(this);
+    this.renderBack = this.renderBack.bind(this);
+    this.renderNext = this.renderNext.bind(this);
   }
 
   getLines() {
@@ -109,6 +111,44 @@ class ControlPanel extends Component {
     );
   }
 
+  renderBack(first, back, current) {
+    const visibility = current === String(first) ? ' invisible' : '';
+
+    return (
+      <>
+        <li className={`nav-item${visibility}`}>
+          <Link className={`nav-link text-light ${styles.link}`} to={this.createLink(first)}>
+            &laquo; First
+          </Link>
+        </li>
+        <li className={`nav-item${visibility}`}>
+          <Link className={`nav-link text-light ${styles.link}`} to={this.createLink(back)}>
+            &#8249; Back
+          </Link>
+        </li>
+      </>
+    );
+  }
+
+  renderNext(current, next, last) {
+    const visibility = current === String(last) ? ' invisible' : '';
+
+    return (
+      <>
+        <li className={`nav-item${visibility}`}>
+          <Link className={`nav-link text-light ${styles.link}`} to={this.createLink(next)}>
+            Next &#8250;
+          </Link>
+        </li>
+        <li className={`nav-item${visibility}`}>
+          <Link className={`nav-link text-light ${styles.link}`} to={this.createLink(last)}>
+            Last &raquo;
+          </Link>
+        </li>
+      </>
+    );
+  }
+
   render() {
     const { refIsOpen, settingsIsOpen } = this.state;
     const [first, back, current, next, last] = this.getFbcnl();
@@ -117,53 +157,6 @@ class ControlPanel extends Component {
     return (
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <div className="collapse navbar-collapse" id="controlPanel">
-          <ul className={`navbar-nav mr-auto ${styles.dummyIcon}`} />
-          <ul className="navbar-nav mx-auto">
-            <li className="nav-item">
-              <Link className={`nav-link text-light ${styles.link}`} to={this.createLink(first)}>
-                &laquo; First
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className={`nav-link text-light ${styles.link}`} to={this.createLink(back)}>
-                &#8249; Back
-              </Link>
-            </li>
-            <li className="nav-item dropdown">
-              <button className={`btn btn-link nav-link text-light dropdown-toggle ${styles.dropdownButton}`} type="button" aria-haspopup="true" aria-expanded={refIsOpen} onClick={this.toggleRefOpen}>
-                {current}
-              </button>
-              <div className={`dropdown-menu ${styles.dropdownScroll} ${refIsOpen ? 'show' : ''}`}>
-                {
-                  lines.map((n) => (
-                    <Link className="dropdown-item" key={n} to={this.createLink(n)} onClick={this.toggleRefOpen}>
-                      {n}
-                    </Link>
-                  ))
-                }
-              </div>
-            </li>
-            <li className="nav-item">
-              <Link className={`nav-link text-light ${styles.link}`} to={this.createLink(next)}>
-                Next &#8250;
-              </Link>
-            </li>
-            <li>
-              <Link className={`nav-link text-light ${styles.link}`} to={this.createLink(last)}>
-                Last &raquo;
-              </Link>
-            </li>
-          </ul>
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item dropdown dropleft">
-              <button className="btn btn-link nav-link text-light" type="button" aria-haspopup="true" aria-expanded={settingsIsOpen} onClick={this.toggleSettingsOpen}>
-                <Octicon icon={Settings} />
-              </button>
-              <div className={`dropdown-menu ${styles.dropdownScroll} ${settingsIsOpen ? 'show' : ''}`}>
-                {this.renderSettingsLinks()}
-              </div>
-            </li>
-          </ul>
         </div>
       </nav>
     );

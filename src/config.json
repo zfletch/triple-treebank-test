@@ -5,6 +5,7 @@
   "report": "https://github.com/zfletch/triple-treebank-test/issues",
   "github": "https://github.com/zfletch/triple-treebank-test/",
   "twitter": "https://twitter.com/PerseidsProject",
+  "treebankReact": true,
   "collections": [
     {
       "title": "Triple Treebank",
